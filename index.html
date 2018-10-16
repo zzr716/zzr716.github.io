@@ -79,6 +79,58 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2018/10/16/js踩坑记/" title="js踩坑记" itemprop="url">js踩坑记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2018-10-16T08:29:42.000Z" itemprop="datePublished"> Published 2018-10-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>JavaScript是动态类型语言，就是指变量类型不是稳定的，是可以随时改变的<br>变量声明如果不赋值，则类型为undefined<br>JavaScript一共有六种数据类型，分别书number数字类型，string字符串类型，Boolean布尔值 null空 undefined 和object对象<br>可以用typeof来判断变量的数据类型<br>但是如果没有定义变量值，则为undefined 如 typeof  v  //undefined<br>Instanceof 也可以判断数据类型，同时他可以区分数组和对象<br>Instanceof  a[]  is  Array //true<br>typeof null //object  因为历史遗留问题，null一开始并不是单独的数据类型，属于object的一种，所以判断null的类型会是object<br>Number（undefined） // NAN</p>
+<p>布尔值为false的有： undefined null false 0 “”（空字符串）<br>注意[] {}空数组和空对象都是true！</p>
+<p>JavaScript数字都是64位浮点数<br>所以<br> <img src="data:image/png;base64,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" alt="image"><br>为了解决这个问题可以使用toFixed()<br>如：<br> <img src="data:image/png;base64,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" alt="image"></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2018/10/12/css布局/" title="css布局" itemprop="url">css布局</a>
   </h1>
   <p class="article-author">By
