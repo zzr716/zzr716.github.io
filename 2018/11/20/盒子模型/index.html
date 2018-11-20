@@ -4,24 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>清除浮动的几种方式 | Hexo</title>
+    <title>css盒模型 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
     
 
     
-    <meta name="description" content="首先要知道什么是浮动。标准文档流是一步一步来，这样建站无法做到并排显示的效果，为了解决这个问题，有了浮动。一个元素浮动，它就脱标，即脱离了标准文档流。这个时候你可以实现并排，文字围绕图片的效果。一、让祖先元素高度设置比子元素高，让他们有足够的位置这种方法不好，这样内容一旦超出高度，页面就不好了二、使用clear：both 它可以清楚别人对我的影响这样的话会导致margin失效三、在俩个之间插入一个">
+    <meta name="description" content="今天读一个布局文章时候看到的一些问题，想说从现在开始进行整理给自己看看。 盒模型之前面试的时候经常被问这个，讲的可能不好，现在总结一下 IE盒子模型和W3C盒子模型盒子模型分为上述两种，W3C盒子模型也就是W3C的标准。这两个模型的唯一区别是计算width和height时，IE盒子模型包含padding和border, W3C盒子模型则不包括。 W3C模型中：　　　　　　CSS中的宽（width）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="清除浮动的几种方式">
-<meta property="og:url" content="http://yoursite.com/2018/10/25/清除浮动的几种方式/index.html">
+<meta property="og:title" content="css盒模型">
+<meta property="og:url" content="http://yoursite.com/2018/11/20/盒子模型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先要知道什么是浮动。标准文档流是一步一步来，这样建站无法做到并排显示的效果，为了解决这个问题，有了浮动。一个元素浮动，它就脱标，即脱离了标准文档流。这个时候你可以实现并排，文字围绕图片的效果。一、让祖先元素高度设置比子元素高，让他们有足够的位置这种方法不好，这样内容一旦超出高度，页面就不好了二、使用clear：both 它可以清楚别人对我的影响这样的话会导致margin失效三、在俩个之间插入一个">
+<meta property="og:description" content="今天读一个布局文章时候看到的一些问题，想说从现在开始进行整理给自己看看。 盒模型之前面试的时候经常被问这个，讲的可能不好，现在总结一下 IE盒子模型和W3C盒子模型盒子模型分为上述两种，W3C盒子模型也就是W3C的标准。这两个模型的唯一区别是计算width和height时，IE盒子模型包含padding和border, W3C盒子模型则不包括。 W3C模型中：　　　　　　CSS中的宽（width）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-25T08:53:03.440Z">
+<meta property="og:image" content="https://github.com/zzr716/blog_img/blob/master/bzhz.png">
+<meta property="og:image" content="https://github.com/zzr716/blog_img/blob/master/iehz.png">
+<meta property="og:updated_time" content="2018-11-20T07:17:12.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清除浮动的几种方式">
-<meta name="twitter:description" content="首先要知道什么是浮动。标准文档流是一步一步来，这样建站无法做到并排显示的效果，为了解决这个问题，有了浮动。一个元素浮动，它就脱标，即脱离了标准文档流。这个时候你可以实现并排，文字围绕图片的效果。一、让祖先元素高度设置比子元素高，让他们有足够的位置这种方法不好，这样内容一旦超出高度，页面就不好了二、使用clear：both 它可以清楚别人对我的影响这样的话会导致margin失效三、在俩个之间插入一个">
+<meta name="twitter:title" content="css盒模型">
+<meta name="twitter:description" content="今天读一个布局文章时候看到的一些问题，想说从现在开始进行整理给自己看看。 盒模型之前面试的时候经常被问这个，讲的可能不好，现在总结一下 IE盒子模型和W3C盒子模型盒子模型分为上述两种，W3C盒子模型也就是W3C的标准。这两个模型的唯一区别是计算width和height时，IE盒子模型包含padding和border, W3C盒子模型则不包括。 W3C模型中：　　　　　　CSS中的宽（width）">
+<meta name="twitter:image" content="https://github.com/zzr716/blog_img/blob/master/bzhz.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -81,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/25/清除浮动的几种方式/" title="清除浮动的几种方式" itemprop="url">清除浮动的几种方式</a>
+      <a href="/2018/11/20/盒子模型/" title="css盒模型" itemprop="url">css盒模型</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-25T08:46:54.000Z" itemprop="datePublished"> Published 2018-10-25</time>
+    <time datetime="2018-11-20T08:13:59.000Z" itemprop="datePublished"> Published 2018-11-20</time>
     
   </p>
 </header>
@@ -97,11 +100,36 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#盒模型"><span class="toc-number">1.</span> <span class="toc-text">盒模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IE盒子模型和W3C盒子模型"><span class="toc-number">1.1.</span> <span class="toc-text">IE盒子模型和W3C盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#W3C模型中："><span class="toc-number">1.1.1.</span> <span class="toc-text">W3C模型中：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IE盒模型："><span class="toc-number">1.1.2.</span> <span class="toc-text">IE盒模型：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准模式与怪异模式"><span class="toc-number">1.2.</span> <span class="toc-text">标准模式与怪异模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法："><span class="toc-number">1.3.</span> <span class="toc-text">解决办法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3指定盒子模型种类"><span class="toc-number">1.4.</span> <span class="toc-text">CSS3指定盒子模型种类</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>首先要知道什么是浮动。<br>标准文档流是一步一步来，这样建站无法做到并排显示的效果，为了解决这个问题，有了浮动。<br>一个元素浮动，它就脱标，即脱离了标准文档流。这个时候你可以实现并排，文字围绕图片的效果。<br>一、让祖先元素高度设置比子元素高，让他们有足够的位置<br>这种方法不好，这样内容一旦超出高度，页面就不好了<br>二、使用clear：both 它可以清楚别人对我的影响<br>这样的话会导致margin失效<br>三、在俩个之间插入一个空div，设置空div clear:both<br>而这个时候，如果原本的俩个div要有空隙，可以给这个div一个高度</p>
+		<p>今天读一个布局文章时候看到的一些问题，想说从现在开始进行整理给自己看看。</p>
+<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>之前面试的时候经常被问这个，讲的可能不好，现在总结一下</p>
+<h2 id="IE盒子模型和W3C盒子模型"><a href="#IE盒子模型和W3C盒子模型" class="headerlink" title="IE盒子模型和W3C盒子模型"></a>IE盒子模型和W3C盒子模型</h2><p>盒子模型分为上述两种，W3C盒子模型也就是W3C的标准。<br><br>这两个模型的唯一区别是计算width和height时，IE盒子模型包含padding和border, W3C盒子模型则不包括。<br></p>
+<h3 id="W3C模型中："><a href="#W3C模型中：" class="headerlink" title="W3C模型中："></a>W3C模型中：</h3><p>　　　　　　CSS中的宽（width）=内容（content）的宽</p>
+<p>　　　　　　CSS中的高（height）=内容（content）的高</p>
+<p><hr><br><img src="https://github.com/zzr716/blog_img/blob/master/bzhz.png" alt="image"><br>eg:</p>
+<p>　　　　<code>&lt;div style=&quot;width:50px;height:50px;padding:2px;border:1px solid blue;margin:3px;&quot;&gt;W3C模型&lt;/div&gt;</code><br>则此div的实际大小：<br>　　　　　　　　div高=height+（padding+border+margin）<em>2=50+(2+1+3)</em>2=62px;</p>
+<p>　　　　　　　　div宽=width+（padding+border+margin）<em>2=50+(2+1+3)</em>2=62px;<br>     div内容占大小：</p>
+<p>　　　　　　　　div高=height=50px;</p>
+<p>　　　　　　　　div宽=width=50px;</p>
+<h3 id="IE盒模型："><a href="#IE盒模型：" class="headerlink" title="IE盒模型："></a>IE盒模型：</h3><p>　　　　　　CSS中的宽（width）=内容（content）的宽+（border+padding）*2</p>
+<p>　　　　　　CSS中的高（height）=内容（content）的高+（border+padding）*2<br><img src="https://github.com/zzr716/blog_img/blob/master/iehz.png" alt="image"><br>eg:</p>
+<p>　　　　<code>&lt;div style=&quot;width:50px;height:50px;padding:2px;border:1px solid blue;margin:3px;&quot;&gt;W3C模型&lt;/div&gt;</code></p>
+<p>则此div的实际大小：</p>
+<p>　　　　　　　　div高=height+margin<em>2=50+3</em>2=56px;</p>
+<p>　　　　　　　　div宽=width+margin<em>2=50+3</em>2=62px;</p>
+<pre><code>div内容占大小：
+</code></pre><p>　　　　　　　　div高=height-（border+padding）<em>2=50-（1+2）</em>2=44px;</p>
+<p>　　　　　　　　div宽=width-（border+padding）<em>2=50-（1+2）</em>2=44px;</p>
+<h2 id="标准模式与怪异模式"><a href="#标准模式与怪异模式" class="headerlink" title="标准模式与怪异模式"></a>标准模式与怪异模式</h2><p>为了使页面在不同浏览器下呈现相同的效果，必须统一盒子模型。<br>那么必须设置浏览器的渲染模式是标准模式，在标准模式下，IE6+和其他现代浏览器会以W3C盒子模型渲染。（在怪异模式下，IE中只有IE9+会用W3C盒子模型。</p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>在代码顶部加如下的 doctype 声明，</p>
+<p>　　<code>&lt;!doctype html public &quot;-//w3c//dtd xhtml 1.0 transitional//en&quot; &quot;http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd&quot;&gt;</code></p>
+<p>使页面以W3C盒子模型渲染。</p>
+<p>eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html public &quot;-//w3c//dtd xhtml 1.0 transitional//en&quot; &quot;http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd&quot;&gt;</span><br><span class="line">　　&lt;html&gt;</span><br><span class="line">　　&lt;head&gt;</span><br><span class="line">　　　　&lt;title&gt;标准w3c盒子模型&lt;/title&gt;</span><br><span class="line">　　&lt;/head&gt;</span><br><span class="line">　　&lt;body&gt;</span><br><span class="line">　　&lt;/body&gt;</span><br><span class="line">　　&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为了让网页能兼容各个浏览器，让我们用标准 w3c 盒子模型。</p>
+<h2 id="CSS3指定盒子模型种类"><a href="#CSS3指定盒子模型种类" class="headerlink" title="CSS3指定盒子模型种类"></a>CSS3指定盒子模型种类</h2><p>box-sizing</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -114,7 +142,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/10/25/清除浮动的几种方式/" data-title="清除浮动的几种方式 | Hexo" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/11/20/盒子模型/" data-title="css盒模型 | Hexo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -127,19 +155,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/11/20/盒子模型/" title="css盒模型">
-  <strong>上一篇：</strong><br/>
-  <span>
-  css盒模型</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/10/16/js踩坑记/"  title="js踩坑记">
+<a href="/2018/10/25/清除浮动的几种方式/"  title="清除浮动的几种方式">
  <strong>下一篇：</strong><br/> 
- <span>js踩坑记
+ <span>清除浮动的几种方式
 </span>
 </a>
 </div>
@@ -156,7 +176,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#盒模型"><span class="toc-number">1.</span> <span class="toc-text">盒模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IE盒子模型和W3C盒子模型"><span class="toc-number">1.1.</span> <span class="toc-text">IE盒子模型和W3C盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#W3C模型中："><span class="toc-number">1.1.1.</span> <span class="toc-text">W3C模型中：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IE盒模型："><span class="toc-number">1.1.2.</span> <span class="toc-text">IE盒模型：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准模式与怪异模式"><span class="toc-number">1.2.</span> <span class="toc-text">标准模式与怪异模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法："><span class="toc-number">1.3.</span> <span class="toc-text">解决办法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3指定盒子模型种类"><span class="toc-number">1.4.</span> <span class="toc-text">CSS3指定盒子模型种类</span></a></li></ol></li></ol>
  
   </div>
 
