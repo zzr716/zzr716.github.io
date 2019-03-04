@@ -1,98 +1,456 @@
-<% if (page.layout=='post' || page.layout=='photo'){ %>
- <%- partial('_partial/head') %>
+
+ <!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>双栏布局 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="左边固定，右边自适应的双栏布局的几种实现方式总结一下最近看的一个博客，一共有七种方法 一、双inline-block1234567891011.left &amp;#123;    width: 140px;&amp;#125;.left, .right &amp;#123;    display: inline-block;    vertical-align: top;    box-sizing: border-b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双栏布局">
+<meta property="og:url" content="http://yoursite.com/2018/11/30/双栏布局/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="左边固定，右边自适应的双栏布局的几种实现方式总结一下最近看的一个博客，一共有七种方法 一、双inline-block1234567891011.left &amp;#123;    width: 140px;&amp;#125;.left, .right &amp;#123;    display: inline-block;    vertical-align: top;    box-sizing: border-b">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-30T09:32:27.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="双栏布局">
+<meta name="twitter:description" content="左边固定，右边自适应的双栏布局的几种实现方式总结一下最近看的一个博客，一共有七种方法 一、双inline-block1234567891011.left &amp;#123;    width: 140px;&amp;#125;.left, .right &amp;#123;    display: inline-block;    vertical-align: top;    box-sizing: border-b">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
   <body>
     <header>
-      <%- partial('_partial/header') %>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</ul></nav>			
+</div>
     </header>
     <div id="container">
-      <%- body %>
-      <%- partial('_partial/sidebar',{item: page,table: true}) %>
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/11/30/双栏布局/" title="双栏布局" itemprop="url">双栏布局</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  </p><p class="article-time">
+    <time datetime="2018-11-30T08:39:40.000Z" itemprop="datePublished"> Published 2018-11-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#左边固定，右边自适应的双栏布局的几种实现方式"><span class="toc-number">1.</span> <span class="toc-text">左边固定，右边自适应的双栏布局的几种实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、双inline-block"><span class="toc-number">1.1.</span> <span class="toc-text">一、双inline-block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、双float"><span class="toc-number">1.2.</span> <span class="toc-text">二、双float</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、float-margin-left"><span class="toc-number">1.3.</span> <span class="toc-text">三、float+margin-left</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、absolute-margin-left"><span class="toc-number">1.4.</span> <span class="toc-text">四、absolute+margin-left</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、float-BFC"><span class="toc-number">1.5.</span> <span class="toc-text">五、float+BFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、flex方法"><span class="toc-number">1.6.</span> <span class="toc-text">六、flex方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、grid"><span class="toc-number">1.7.</span> <span class="toc-text">七、grid</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="左边固定，右边自适应的双栏布局的几种实现方式"><a href="#左边固定，右边自适应的双栏布局的几种实现方式" class="headerlink" title="左边固定，右边自适应的双栏布局的几种实现方式"></a>左边固定，右边自适应的双栏布局的几种实现方式</h1><p>总结一下最近看的一个博客，一共有七种方法<br></p>
+<h2 id="一、双inline-block"><a href="#一、双inline-block" class="headerlink" title="一、双inline-block"></a>一、双inline-block</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">&#125;</span><br><span class="line">.left, .right &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: top;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    width: calc(100%-140px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是用calc来计算右边盒子的宽度，要知道左边的呢宽度是多少，父盒子设置font-size为0可以消除空格字符的影响，要设置vertical-align<br><br>要注意calc的兼容以及用法 运算符号前后要有空格记得。</p>
+<h2 id="二、双float"><a href="#二、双float" class="headerlink" title="二、双float"></a>二、双float</h2><p>这个也是一直自己用的方法<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line">&#125;</span><br><span class="line">.left, .right &#123;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    float: left;</span><br><span class="line">    height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    width: calc( 100% - 140px );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也是用calc来设置右边的宽度，这个要注意清除浮动，自己写的时候用的宽度方法是用百分比来控制，之后可以考虑calc，不过也要根据实际项目需求</p>
+<h2 id="三、float-margin-left"><a href="#三、float-margin-left" class="headerlink" title="三、float+margin-left"></a>三、float+margin-left</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">    background-color: #ff0000;</span><br><span class="line">    float: left;</span><br><span class="line">    height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    margin-left: 140px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据块级盒子具有填满父容器，并且随着父容器的宽度进行自适应的流动特征来实现的这个方案，右边盒子的margin-left是左边宽度加上离左边的距离。要注意清除浮动。之后的可能可以考虑这个方案</p>
+<h2 id="四、absolute-margin-left"><a href="#四、absolute-margin-left" class="headerlink" title="四、absolute+margin-left"></a>四、absolute+margin-left</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">    background-color: #ff0000;</span><br><span class="line">    height: 200px;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    margin-left: 140px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用了绝对定位 没有清除浮动 如果左边高于右边会超过父元素，要设置父元素的min-height 这个方案以前没有接触过，有点疑问，等之后闲下来可以看看</p>
+<h2 id="五、float-BFC"><a href="#五、float-BFC" class="headerlink" title="五、float+BFC"></a>五、float+BFC</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">    background-color: #ff0000;</span><br><span class="line">    height: 200px;</span><br><span class="line">    float: left;</span><br><span class="line">    margin-right: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    margin-left: 0;</span><br><span class="line">    overflow: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是左边设置margin-right来实现两个盒子的距离，右边的overflow:auto来形成BFC 父元素要清除浮动</p>
+<h2 id="六、flex方法"><a href="#六、flex方法" class="headerlink" title="六、flex方法"></a>六、flex方法</h2><p>这个兼容有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">    background-color: #ff0000;</span><br><span class="line">    height: 200px;</span><br><span class="line">    flex: 0 0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    flex: 1 1 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="七、grid"><a href="#七、grid" class="headerlink" title="七、grid"></a>七、grid</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-columns: 120px 1fr;</span><br><span class="line">    align-items: start;</span><br><span class="line">&#125;</span><br><span class="line">.left, .right &#123;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    width: 140px;</span><br><span class="line">    background-color: #ff0000;</span><br><span class="line">    height: 200px;</span><br><span class="line">    grid-column: 1;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: #00ff00;</span><br><span class="line">    grid-column: 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/11/30/双栏布局/" data-title="双栏布局 | Hexo" data-tsina class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev">
+ <a href="/2019/02/18/test/" title>
+  <strong>上一篇：</strong><br>
+  <span>
+  (no title)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/11/20/盒子模型/" title="css盒模型">
+ <strong>下一篇：</strong><br> 
+ <span>css盒模型
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#左边固定，右边自适应的双栏布局的几种实现方式"><span class="toc-number">1.</span> <span class="toc-text">左边固定，右边自适应的双栏布局的几种实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、双inline-block"><span class="toc-number">1.1.</span> <span class="toc-text">一、双inline-block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、双float"><span class="toc-number">1.2.</span> <span class="toc-text">二、双float</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、float-margin-left"><span class="toc-number">1.3.</span> <span class="toc-text">三、float+margin-left</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、absolute-margin-left"><span class="toc-number">1.4.</span> <span class="toc-text">四、absolute+margin-left</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、float-BFC"><span class="toc-number">1.5.</span> <span class="toc-text">五、float+BFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、flex方法"><span class="toc-number">1.6.</span> <span class="toc-text">六、flex方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、grid"><span class="toc-number">1.7.</span> <span class="toc-text">七、grid</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://segmentfault.com/" target="_blank" title="segmentfault">segmentfault</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
     </div>
-    <footer><%- partial('_partial/footer') %></footer>
-    <%- partial('_partial/after_footer') %>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m ZZR in China. <br>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
   </body>
 </html>
-<% } else if(page.layout=='page'){ %>
-  <% if(page.source.match(/\.md$/)){ %>
-    <%- partial('_partial/head') %>
-      <body>
-        <header>
-          <%- partial('_partial/header') %>
-        </header>
-        <div id="container">
-          <%- body %>
-        </div>
-        <footer><%- partial('_partial/footer') %></footer>
-        <%- partial('_partial/after_footer') %>
-      </body>
-     </html>
-     <% }else{ %>
-    <%- page.content %>
-  <% } %>
-<% } else if(page.layout=='search'){ %>
-<%- partial('_partial/head') %>
-    <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="container">
-        <%- partial('_partial/search')%>
-      </div>
-      <footer><%- partial('_partial/footer') %></footer>
-      <%- partial('_partial/after_footer') %>
-    </body>
-   </html>
-<% } else if(page.layout=='tags'){ %>
- <%- partial('_partial/head') %>
-    <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="container">
-          <%- partial('_partial/tags')%>
-      </div>
-      <footer><%- partial('_partial/footer') %></footer>
-      <%- partial('_partial/after_footer') %>
-    </body>
-   </html>
-<% } else if(page.layout=='categories'){ %>
- <%- partial('_partial/head') %>
-    <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="container">
-          <%- partial('_partial/categories')%>
-      </div>
-      <footer><%- partial('_partial/footer') %></footer>
-      <%- partial('_partial/after_footer') %>
-    </body>
-   </html>
-<% } else if(page.category!=null||page.tag!=null||page.archive!=null) { %>
-  <%- partial('_partial/head') %>
-    <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="container">
-        <%- body %>
-      </div>
-      <footer><%- partial('_partial/footer') %></footer>
-      <%- partial('_partial/after_footer') %>
-    </body>
-   </html>
-<% } else { %>
- <%- partial('_partial/head') %>
-  <body>
-    <header>
-      <%- partial('_partial/header') %>
-    </header>
-    <div id="container">
-      <%- body %>
-      <%- partial('_partial/sidebar',{item: page,table: false}) %>
-    </div>
-    <footer><%- partial('_partial/footer') %></footer>
-    <%- partial('_partial/after_footer') %>
-  </body>
- </html>
-<% } %>
