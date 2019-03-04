@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-22T09:19:55.810Z</updated>
+  <updated>2019-03-04T02:30:36.012Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,18 +18,18 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2019/02/18/test/"/>
-    <id>http://yoursite.com/2019/02/18/test/</id>
+    <link href="http://yoursite.com/2019/02/18/Html2Canvas%E5%92%8CCanvas2Img/"/>
+    <id>http://yoursite.com/2019/02/18/Html2Canvas和Canvas2Img/</id>
     <published>2019-02-18T05:36:06.476Z</published>
-    <updated>2019-02-22T09:19:55.810Z</updated>
+    <updated>2019-03-04T02:30:36.012Z</updated>
     
-    <content type="html"><![CDATA[<p>  决定开始写一些东西记录一下平时做了什么，毕竟博客闲置了很久，如果能坚持在简书上写下去再把博客恢复起来吧=-=<br>  公司项目新提出的一个需求，是要把一个弹出框截图下来，刚开始拿到这个需求我是拒绝的，完全摸不着头脑呀，只能借助万能的搜索帮忙了。<br>  ！！！！！rrrrrrrr</p>]]></content>
+    <content type="html"><![CDATA[<p>  决定开始写一些东西记录一下平时做了什么，毕竟博客闲置了很久，如果能坚持在简书上写下去再把博客恢复起来吧=-=。<br>  首先我的需求是把一个带有动态变化img的弹窗以图片形式保存下来，实时监控到平板界面。因为这个图片是相差几秒刷新一次，需要每次都要获取到这个图片是什么，所以把html转canvas这个操作放在了图片请求中。当每次从服务器请求到新图片的时候，也随之把相应的图片画下来。而本地保存就是用canvas的toDataURL()，这里我是用的是一个插件Canvas2Image.js。只要调用它封装好的方法就可以把图片保存下来。下面说下在本次构建中踩的坑。<br>  一、截下来的图片只有一半或者直接空白<br>  前面也说了，弹窗中图片是动态变化了，由于canvas对于图片资源的同源限制，如果画布中包含跨域的图片资源则会污染画布，造成生成图片样式混乱或者html2canvas方法不执行等问题。针对这个问题，做了如下设置<br>  1.html2canvas的配置项中配置 allowTaint:true 或 useCORS:true(二者不可共同使用)：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var opts = &#123;useCORS: true&#125;;</span><br><span class="line"> </span><br><span class="line">html2canvas(element, opts);</span><br></pre></td></tr></table></figure></p><p>  2.img标签增加 crossOrigin=‘anonymous‘ ；<br>  3.图片服务器配置Access-Control-Allow-Origin 或使用代理；<br>  二、生成的图片失真<br>  大部分找到的结果都是使用设备像素比去操作，我是按照<a href="https://blog.csdn.net/u013291076/article/details/79206141" target="_blank" rel="noopener">这个大神</a>文中的方法来一葫芦画瓢的。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;  决定开始写一些东西记录一下平时做了什么，毕竟博客闲置了很久，如果能坚持在简书上写下去再把博客恢复起来吧=-=&lt;br&gt;  公司项目新提出的一个需求，是要把一个弹出框截图下来，刚开始拿到这个需求我是拒绝的，完全摸不着头脑呀，只能借助万能的搜索帮忙了。&lt;br&gt;  ！！！！！r
+        &lt;p&gt;  决定开始写一些东西记录一下平时做了什么，毕竟博客闲置了很久，如果能坚持在简书上写下去再把博客恢复起来吧=-=。&lt;br&gt;  首先我的需求是把一个带有动态变化img的弹窗以图片形式保存下来，实时监控到平板界面。因为这个图片是相差几秒刷新一次，需要每次都要获取到这个图片是什么
       
     
     </summary>
